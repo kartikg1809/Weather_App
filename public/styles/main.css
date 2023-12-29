@@ -1,0 +1,51 @@
+body{
+    background-color: #B4D4FF;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header{
+    background-color: #e9eaec;
+    padding: 2px 0;
+    justify-content: center;
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: rgb(75, 75, 75);
+    font-size: medium;
+    font-weight:600;
+    padding: 0px 28px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    margin-right: auto;
+    margin-top: 20px;
+}
+h1{
+    font-weight: bold;
+    font-size: 3.5em;
+    color: #333652;
+}
+h2{
+    font-size: 2.5em;
+    color: #333652;
+}
+h3{
+    font-size: 2em;
+    color: #333652;
+}
+h5{
+    color: #333652;
+    font-size: large;
+    font-weight: 500;
+    padding: 0 20px;
+    text-align: center;
+}
+.feather{
+    margin:16px 0;
+    padding: 2px 300px 0px 40px;
+    font-size: 30px;
+}
