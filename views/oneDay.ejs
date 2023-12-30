@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+<h1>One Day Forecast</h1>
+<form action="post" method="post">
+<div class="inputBox">
+  <input class="input" id="city"name="id" type="text" label="" placeholder="--Enter a City--" />
+</div>
+<input formaction="/onedayforecast" type="submit" class="button" value="Get Forecast"></input>
+</form>
+<% if(locals.weather){ %>
+<div class="day">
+    <p class="half"><%= city %> </p>
+  <div>
+    <h1></h1>
+    <i></i>
+  </div>
+  <div class="valuesDay">
+        <div class="table">
+            <p class="head">Temp feels <i class="fa-solid fa-temperature-half"></i></p>
+            <p class="head"><%= weather.DailyForecasts[0].RealFeelTemperature.Maximum.Value %></p>
+        </div>
+        <div class="table">
+            <p class="head">Wind <i class="fa-solid fa-wind"></i></p>
+            <p class="head"><%= weather.DailyForecasts[0].Day.Wind.Speed.Value %></p>
+        </div><div class="table">
+            <p class="head">Precipitation <i class="fa-solid fa-cloud-rain"></i></p>
+            <p class="head"></p>
+        </div><div class="table">
+            <p class="head">Humidity <i class="fa-solid fa-droplet"></i></p>
+            <p class="head"><%= weather.DailyForecasts[0].Day.RelativeHumidity.Average	 %></p>
+        </div><div class="table">
+            <p class="head">Pressure <i class="fa-solid fa-stopwatch"></i></p>
+            <p class="head"></p>
+        </div><div class="table">
+            <p class="head">Hours of Sun<i class="fa-solid fa-gauge"></i></p>
+            <p class="head"><%= weather.DailyForecasts[0].HoursOfSun%></p>
+        </div>
+  </div>
+</div>
+<% } %>
