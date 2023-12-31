@@ -105,15 +105,15 @@ h5{
     row-gap: 0;
 }
 .day{
-    width: 40%;
-    height:300px;
+    width: 50%;
+    height:250px;
     background-color:#FFD700;
     border-radius: 10px;
     margin: 20px auto;
     padding:20px 40px;
 }
 .half{
-    padding: 7px;
+    padding: 4px;
     text-align: left;
     border-bottom: #333652 2px solid;
 }
@@ -123,7 +123,12 @@ p{
     font-weight: bold;
 }
 .head{
-    font-weight: 400;
+    font-weight:lighter;
+    font-size: larger;
+    margin: 4px;
+}
+.head2{
+    font-weight:bold;
     font-size: larger;
     margin: 4px;
 }
@@ -132,4 +137,57 @@ p{
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
+}
+.card{
+    height: 140px;
+    width: 180px;
+    background-color: #FFD700;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 24px;
+    color: #333652;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+.card *{
+    margin: 4px;
+}
+h4{
+    font-size:x-large;
+    text-align: left;
+}
+h6{
+    font-size: medium;
+    text-align: left;
+}
+.cloudy{
+    text-align: left;
+    font-weight: 100;
+}
+.icon{
+    font-size: xx-large;
+    padding-right: 20px;
+}
+.both{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+}
+.currenttemp{
+    text-align: left;
+    font-size:4rem;
+    margin: 0;
+}
+.maxtemp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.moon{
+    font-size: 3.5rem;
+    color: #333652;
 }

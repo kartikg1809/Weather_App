@@ -4,21 +4,35 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port=3000;
-let apikey="2weW3MUq1GGiHiKkmDWybrJMH9wTdgSw";
+let apikey="ONzfMcqyrt1vUZ8BI1ipgM1Bxkpwr8Eb";
 let URL="http://dataservice.accuweather.com/locations/v1";
-let URL2="https://dataservice.accuweather.com/forecasts/v1"
+let URL2="https://dataservice.accuweather.com/currentconditions/v1/"
 let weather;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
-app.get('/', (req, res) =>{
-    res.render('index.ejs');
+app.get('/', async (req, res) =>{
+    try{
+        let config={
+            params: {
+                apikey:apikey,
+            },
+          }
+        const result = await axios.get("http://dataservice.accuweather.com/currentconditions/v1/topcities/50",config);
+        console.log(result);
+        res.render('index.ejs',{content:result.data});
+    }catch(e){
+
+    }
 });
 
 app.get('/oneDay', (req, res) =>{
     res.render('oneDay.ejs',{data:weather});
 });
-app.post("/onedayforecast", async (req, res) => {
+app.get('/current', (req, res) =>{
+    res.render('current.ejs',{data:weather});
+});
+app.post("/currentforecast", async (req, res) => {
     const searchId = req.body.id;
     try {
         let config={
@@ -36,10 +50,9 @@ app.post("/onedayforecast", async (req, res) => {
             details:true,
         },
       }
-      console.log(URL + "/daily/1day/"+key, config2);
-      const result2 = await axios.get(URL2 + "/daily/1day/"+key, config2);
+      const result2 = await axios.get(URL2 +key, config2);
       console.log(result2.data);
-      res.render("oneDay.ejs", { weather: result2.data,city:searchId});
+      res.render("current.ejs", { weather: result2.data,city:searchId.charAt(0).toUpperCase() + searchId.slice(1).toLowerCase()});
     } catch (error) {
       weather="Something went wrong";
     }
