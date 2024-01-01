@@ -11,7 +11,7 @@ header{
     justify-content: center;
     display: flex;
 }
-a{
+.nav{
     text-decoration: none;
     color: rgb(75, 75, 75);
     font-size: medium;
@@ -20,7 +20,7 @@ a{
     height: 24px;
     line-height: 24px;
 }
-a:hover {
+.nav:hover {
     border-bottom: 4px solid #FFD700;
     transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
 }
@@ -54,6 +54,7 @@ h5{
     margin:16px 0;
     padding: 2px 300px 0px 40px;
     font-size: 30px;
+    color: #333652;
 }
 .input{
     text-align: center;
@@ -99,7 +100,7 @@ h5{
 
 .valuesDay {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 2fr); 
     grid-template-rows: repeat(3, 1fr);    
     column-gap: 40px;
     row-gap: 0;
@@ -146,6 +147,13 @@ p{
     border-radius: 10px;
     padding: 24px;
     color: #333652;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+header ul li a:active {
+    border-bottom: 4px solid #FFD700;
 }
 .container{
     display: flex;
@@ -190,4 +198,59 @@ h6{
 .moon{
     font-size: 3.5rem;
     color: #333652;
+}
+.fiveday{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFD700;
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px 0;
+}
+.fivedayhead{
+    display: flex;
+    justify-content: center;
+}
+.day-card{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    background-color: #FFD700;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+    height:270px;
+}
+.nightcard{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    background-color: #FFD700;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    height:200px;
+}
+.onedaygrid {
+    display: grid;
+    grid-template-columns: repeat(2,4fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap:40px;
+    row-gap: 0px;
+}
+
+.onedaygrid > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:2px;
+    max-height:40px;
+    align-items: center;
+}
+h4{
+    color: #333652;
+
 }
