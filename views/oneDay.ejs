@@ -5,7 +5,7 @@
     <div class="inputBox">
         <input class="input" id="city" name="id" type="text" label="" placeholder="--Enter a City--" />
     </div>
-    <input formaction="/onedayforecast" type="submit" class="button" value="Get Forecast"></input>
+    <input formaction="/onedayforecast" type="submit" class="button" value="Get Forecast"/>
 </form>
 <% if(locals.weather){ %>
 <div class="day-card">
@@ -83,4 +83,5 @@
         </div>
     </div>
 </div>
+<%- include("partials/footer.ejs") %>
 <% } %>
