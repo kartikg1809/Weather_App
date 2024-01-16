@@ -22,7 +22,7 @@
             <p style="margin: 1px 0; font-weight: 100;"><%= formattedDate %></p>
         </div>
         <div>
-            <h3><%= Math.round((weather.DailyForecasts[i].Temperature.Maximum.Value-32)*5/9).toFixed(1) %>/ <%= Math.round((weather.DailyForecasts[i].Temperature.Maximum.Value -32)*5/9).toFixed(1)%> °C</h3>
+            <h3><%= Math.round((weather.DailyForecasts[i].Temperature.Maximum.Value-32)*5/9).toFixed(1) %>/ <%= Math.round((weather.DailyForecasts[i].Temperature.Minimum.Value -32)*5/9).toFixed(1)%> °C</h3>
         </div>
         <div>
             Air Quality: <%= weather.DailyForecasts[i].AirAndPollen[0]?.Category || 'N/A' %> 

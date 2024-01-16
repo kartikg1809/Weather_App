@@ -11,7 +11,11 @@
     <h4><%= content[i].LocalizedName %></h4>
     <h6><%= content[i].Country.LocalizedName %></h6>
     <div class="both">
-    <i class="icon fa-regular fa-moon"></i>
+        <% if(content[i].IsDayTime){ %>
+    <i class="icon fa-regular fa-sun"></i>
+    <% }else{ %>
+        <i class="icon fa-regular fa-moon"></i>
+        <% } %>
     <h4><%= content[i].Temperature.Metric.Value %>°C</h4>
 </div>
     <p class="cloudy">Cloudy</p>

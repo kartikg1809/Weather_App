@@ -19,7 +19,6 @@ app.get('/', async (req, res) =>{
             },
           }
         const result = await axios.get("http://dataservice.accuweather.com/currentconditions/v1/topcities/50",config);
-        console.log(result);
         res.render('index.ejs',{content:result.data});
     }catch (error) {
         console.error("Error:", error);
@@ -55,7 +54,6 @@ app.post("/currentforecast", async (req, res) => {
         },
       }
       const result2 = await axios.get(URL2 +key, config2);
-      console.log(result2.data);
       res.render("current.ejs", { weather: result2.data,city:searchId.charAt(0).toUpperCase() + searchId.slice(1).toLowerCase()});
     } catch (error) {
         console.error("Error:", error);
@@ -81,7 +79,6 @@ app.post("/currentforecast", async (req, res) => {
         },
       }
       const result2 = await axios.get("http://dataservice.accuweather.com/forecasts/v1/daily/1day/" +key, config2);
-      console.log(result2.data);
       res.render("oneDay.ejs", { weather: result2.data});
     } catch (error) {
         console.error("Error:", error);
@@ -107,7 +104,6 @@ app.post("/currentforecast", async (req, res) => {
         },
       }
       const result2 = await axios.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/" +key, config2);
-      console.log(result2.data);
       res.render("fiveday.ejs", { weather: result2.data});
     } catch (error) {
         console.error("Error:", error);
