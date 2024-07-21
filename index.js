@@ -1,12 +1,14 @@
 import axios from "axios";
 import express from "express";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 const port=3000;
-let apikey="vA5h7FdJWut9IMwHjOwoEb6e8G3zh2Sw";
 let URL="http://dataservice.accuweather.com/locations/v1";
 let URL2="https://dataservice.accuweather.com/currentconditions/v1/"
+const apikey = process.env.API_KEY;
 let weather;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'))
