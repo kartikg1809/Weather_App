@@ -21,7 +21,16 @@ app.get('/', async (req, res) =>{
             },
           }
         const result = await axios.get("http://dataservice.accuweather.com/currentconditions/v1/topcities/50",config);
-        res.render('index.ejs',{content:result.data});
+        const sortedData = result.data.sort((a, b) => {
+            if (a.LocalizedName < b.LocalizedName) {
+                return -1;
+            }
+            if (a.LocalizedName > b.LocalizedName) {
+                return 1;
+            }
+            return 0;
+        });
+        res.render('index.ejs',{content:sortedData});
     }catch (error) {
         console.error("Error:", error);
         res.render("error.ejs");
